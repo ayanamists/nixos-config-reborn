@@ -12,5 +12,12 @@
   networking.hostName = hostname;
 
   system.stateVersion = stateVersion;
+
+  nixpkgs.config.allowUnfree = true;
+
+  services.openssh = {
+    enable = true;
+    ports = [ 22 ];
+  };
 }
 
